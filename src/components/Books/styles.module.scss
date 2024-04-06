@@ -1,0 +1,42 @@
+@import "../../styles/variables";
+
+.books {
+	width: remHandler(924);
+	// min-height: remHandler(1127);
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: min-content;
+	gap: remHandler(96) remHandler(76);
+	margin-top: remHandler(45);
+	margin-left: remHandler(-60);
+	margin-bottom: remHandler(120);
+	padding-bottom: remHandler(75);
+	position: relative;
+}
+
+@media screen and (min-width: 1441px) {
+	.wrapper {
+		width: 95rem;
+	}
+
+	.sidebar {
+		width: 41rem;
+
+		& a {
+			margin-left: 65%;
+		}
+	}
+}
+
+@media screen and (max-width: 1080px) {
+	.books {
+		width: 95%;
+		gap: remHandler(10) remHandler(50);
+		margin: remHandler(40) auto 0;
+	}
+
+	.button {
+		bottom: remHandler(-40);
+	}
+
+}

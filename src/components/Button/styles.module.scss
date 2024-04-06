@@ -1,0 +1,46 @@
+@import "../../styles/variables";
+
+
+.button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: remHandler(176);
+	height: remHandler(45);
+	color: $darkestviolet;
+	background-color: $white;
+	font-size: remHandler(9);
+	text-transform: uppercase;
+	font-family: $m-b;
+	margin-top: remHandler(16);
+	border: remHandler(1) solid;
+	text-decoration: none;
+	transition: all 0.6s;
+
+	&:hover {
+		cursor: pointer;
+		background-color: $darkestviolet;
+		color: $white;
+	}
+}
+
+.disabled {
+	color: $darkgrey;
+	background-color: $grey;
+	border-color: $lightgrey;
+	pointer-events: none;
+}
+
+.absolute {
+	position: absolute;
+	bottom: remHandler(-96);
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+@media screen and (max-width: 1080px) {
+	.absolute {
+		bottom: remHandler(-20);
+	}
+}

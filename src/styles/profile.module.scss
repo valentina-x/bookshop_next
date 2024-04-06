@@ -1,0 +1,95 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+.profile {
+	width: 100%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	margin: remHandler(87) auto;
+
+	&__info {
+		display: flex;
+		align-items: flex-start;
+		flex-wrap: wrap;
+		color: $darkblue;
+
+		&_title {
+			width: 100%;
+			@include title;
+		}
+	}
+
+	&__avatar {
+		width: remHandler(235);
+		height: remHandler(235);
+		object-fit: contain;
+	}
+
+	&__items {
+		margin-left: remHandler(17);
+
+		& .button {
+			margin-top: remHandler(41);
+		}
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		font-family: $m-b;
+		margin-bottom: remHandler(25);
+
+		&_title {
+			display: block;
+			font-size: remHandler(12);
+		}
+
+		& span {
+			font-size: remHandler(24);
+			font-family: $m-b;
+			margin-top: remHandler(8);
+		}
+	}
+
+	&__about {
+		width: 100%;
+		max-width: remHandler(353);
+		min-height: remHandler(345);
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		background-color: $red2;
+		padding: remHandler(17) remHandler(40) remHandler(17) remHandler(28);
+		box-sizing: border-box;
+		box-shadow: 0 remHandler(17) remHandler(36) rgba(53, 49, 84, 0.28);
+
+		&_title {
+			margin: 0 0 remHandler(30);
+			font-size: remHandler(12);
+			font-family: $m-b;
+			text-transform: uppercase;
+		}
+
+		& p {
+			margin: 0;
+			font-family: $m-s;
+			font-size: remHandler(12);
+			color: $darkgrey;
+		}
+	}
+
+	@media screen and (max-width: 1080px) {
+		flex-direction: column;
+		width: 95%;
+		margin: 0 auto;
+
+		&__about {
+			max-width: 100%;
+			min-height: inherit;
+			padding-bottom: remHandler(50);
+			margin-top: remHandler(30);
+		}
+	}
+}

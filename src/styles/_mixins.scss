@@ -1,0 +1,7 @@
+@import "../styles/variables";
+
+@mixin title() {
+	text-transform: uppercase;
+	font-family: $m-b;
+	font-size: remHandler(24);
+}

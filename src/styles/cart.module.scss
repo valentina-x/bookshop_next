@@ -1,0 +1,254 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+.title {
+	width: 100%;
+	@include title;
+	margin-bottom: remHandler(25);
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	text-transform: uppercase;
+	margin-bottom: remHandler(30);
+
+	&__item {
+		width: remHandler(384);
+	}
+
+	&__quantity {
+		width: remHandler(264);
+	}
+
+	&__price {
+		width: remHandler(256);
+	}
+
+	&__delivery {
+		width: remHandler(123);
+	}
+}
+
+.header {
+	font-size: remHandler(12);
+	font-family: $m-b;
+}
+
+.book {
+	display: flex;
+	align-items: center;
+	margin-bottom: remHandler(77);
+
+	&__media {
+		width: remHandler(384);
+		display: flex;
+		align-items: center;
+
+		&_image {
+			width: remHandler(102);
+			height: remHandler(145);
+			object-fit: contain;
+			display: block;
+			margin-right: remHandler(26);
+			box-shadow: 0 remHandler(26) remHandler(36) rgba(53, 49, 84, 0.28);
+		}
+	}
+
+	&__info {
+		width: remHandler(176);
+		color: $darkgrey;
+		font-size: remHandler(10);
+	}
+
+	&__authors {
+		width: remHandler(156);
+		max-height: remHandler(50);
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+		-webkit-line-clamp: 4;
+		text-overflow: ellipsis;
+		margin-bottom: remHandler(11);
+	}
+
+	&__title {
+		color: $darkblue;
+		font-size: remHandler(16);
+		font-family: $m-b;
+		margin: remHandler(4) 0;
+	}
+
+	&__rating {
+		display: flex;
+		align-items: center;
+
+		&_averageRating {
+			color: $yellow;
+			font-size: remHandler(18);
+			margin-right: remHandler(6);
+		}
+
+		&_ratingsCount {
+			font-size: remHandler(11);
+			margin-top: remHandler(2);
+		}
+	}
+
+	&__quantity {
+		width: remHandler(176);
+		height: remHandler(45);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0 remHandler(15);
+		margin-right: remHandler(88);
+		border: remHandler(1) solid $lightgrey;
+
+		& span {
+			width: remHandler(40);
+			font-size: remHandler(16);
+			font-family: $m-b;
+			text-align: center;
+		}
+
+		&_btn {
+			width: remHandler(22);
+			height: remHandler(25);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: transparent;
+			border: none;
+			cursor: pointer;
+			background-color: transparent;
+			transition: all 0.6s;
+
+			&:hover {
+				background-color: $darkwhite;
+			}
+
+			& img {
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+
+	&__price {
+		width: remHandler(256);
+		font-size: remHandler(18);
+		font-family: $m-b;
+	}
+
+	&__delivery {
+		font-size: remHandler(12);
+		font-family: $m-b;
+	}
+}
+
+.total {
+	margin-top: remHandler(117);
+
+	&__price {
+		@include title;
+		margin-bottom: remHandler(19);
+	}
+}
+
+@media screen and (max-width: 1080px) {
+	.cart {
+		width: 95%;
+		margin: 0 auto;
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+
+	.header {
+		display: none;
+	}
+
+	.book {
+		width: 45%;
+		flex-direction: column;
+		align-items: flex-start;
+		margin-bottom: remHandler(50);
+
+		&__media {
+			width: 100%;
+			flex-direction: column;
+
+			&_image {
+				width: 45%;
+				max-height: remHandler(200);
+				height: auto;
+				margin: 0 auto;
+				object-fit: cover;
+			}
+		}
+
+		&__info {
+			width: 100%;
+			margin-top: remHandler(30);
+		}
+
+		&__title {
+			height: remHandler(38);
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+			-webkit-line-clamp: 3;
+			text-overflow: ellipsis;
+		}
+
+		&__authors {
+			height: remHandler(20);
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+			-webkit-line-clamp: 2;
+			text-overflow: ellipsis;
+		}
+
+
+		&__quantity {
+			width: 100%;
+			height: remHandler(45);
+			padding: 0 remHandler(15);
+			margin-right: 0;
+			margin-top: remHandler(10);
+
+			& span {
+				width: remHandler(40);
+				font-size: remHandler(16);
+			}
+
+			&_btn {
+				width: remHandler(22);
+				height: remHandler(25);
+
+				& img {
+					width: 100%;
+					height: 100%;
+					object-fit: contain;
+				}
+			}
+		}
+
+		&__price {
+			width: 100%;
+			margin-top: remHandler(20);
+			margin-bottom: remHandler(10);
+		}
+	}
+
+	.total {
+		margin-top: remHandler(30);
+
+		&__price {
+			font-size: remHandler(18);
+		}
+	}
+}

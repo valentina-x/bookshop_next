@@ -1,0 +1,16 @@
+@import "./variables";
+@import "./_fonts";
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: $m-r, Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}

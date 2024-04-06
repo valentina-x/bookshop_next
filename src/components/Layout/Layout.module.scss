@@ -1,0 +1,22 @@
+@import "../../styles/variables";
+
+.container {
+	width: 100%;
+	max-width: remHandler(1120);
+	margin: remHandler(116) auto remHandler(76);
+
+	@media screen and (max-width: 1080px) {
+		margin-top: remHandler(80);
+	}
+
+	@media screen and (max-width:480px) {
+		margin-top: remHandler(40);
+	}
+}
+
+.main {
+	width: 100%;
+	display: flex;
+	align-self: flex-start;
+	flex-wrap: wrap
+}
